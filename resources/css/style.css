@@ -1,0 +1,31 @@
+/* 
+==================
+Sudoku Table
+==================
+*/
+
+.sudoku-table {
+  border: 5px solid black;
+}
+
+.sudoku-table-row-seperator {
+  border: solid;
+  border-bottom-width: 5px;
+}
+
+.sudoku-table-cell {
+  border: solid;
+  height: 2em;
+  width: 2em;
+  font-size: 35px;
+  text-align: center;
+}
+
+.sudoku-table-cell-seperator {
+  border: solid;
+  border-right-width: 5px;
+  height: 2em;
+  width: 2em;
+  font-size: 35px;
+  text-align: center;
+}
