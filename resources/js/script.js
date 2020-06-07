@@ -1,5 +1,3 @@
-
-
 let puzzle = new Puzzle();
 puzzle.displayBoard(puzzle.solution);
 

@@ -29,7 +29,7 @@ class Puzzle extends Solver{
     this._fillDiagonalBlocks();
 
     // Can start at cell index 3 because first 3 cells will be filled by function above.
-    this.solve(3, true);
+    this.fillBoard(3, true);
   }
   
   _fillDiagonalBlocks() {
@@ -85,7 +85,8 @@ class Puzzle extends Solver{
     let cluesRemoved = 0;
     let nextRandomIndex = 0;
 
-    while(cluesRemoved < 63 && nextRandomIndex < 81) {
+    // cluesRemoved < 64 because it has been proven that no 16-clue Sudoku puzzle with a unique solution exists
+    while(cluesRemoved < 64 && nextRandomIndex < 81) {
       const row = Math.floor(randomIndices[nextRandomIndex] / 9);
       const col = randomIndices[nextRandomIndex] % 9;
       const cellValue = this.board[row][col];
