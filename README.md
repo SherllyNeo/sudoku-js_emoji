@@ -1,3 +1,5 @@
+https://dtr4n.github.io/sudoku-js/
+
 # Sudoku JS
 
 During one weekend, I became heavily addicted to Sudoku. I quite literally sat for 3-4 hours at a time mentally competing with myself to solve puzzles labeled "Hard" as quickly as possible. I eventually did lose interest in solving them, but I began wondering how to generate them.
