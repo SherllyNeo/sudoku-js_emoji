@@ -10,14 +10,14 @@ After discovering that they are generated computationally through backtracking, 
   This article was very helpful during my process of writing the logic for generating Sudoku puzzles.
 
 ## Overview of the Code
-#### Solver Algorithm
+### Solver Algorithm
 1. Recursively iterate through each cell in the 9x9 grid.
 2. At each cell, find all the possible values by checking that a value isn't already in the row, the column, and/or the 3x3 subgrid. 
 3. Set the value of the cell to a selected possible value.
 4. Recursive call iterating to the next cell until all cells are filled.
 5. If a cell has no candidate value, backtrack and select a new possible value.
 
-#### Difficulty Estimation Algorithm
+### Difficulty Estimation Algorithm
 While running the solver algorithm, keep track of the branching factor (B<sub>i</sub>) for each i cell. B is the sum of (B<sub>i</sub> - 1)<sup>2</sup>. In addition, keep track of the number of empty cells E.
 
 Difficulty = B * 100 + E.
