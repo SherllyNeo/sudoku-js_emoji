@@ -6,6 +6,7 @@ After discovering that they are generated computationally through backtracking, 
 
 ## Reference
   https://dlbeer.co.nz/articles/sudoku.html
+  
   This article was very helpful during my process of writing the logic for generating Sudoku puzzles.
 
 ## Overview of the Code
