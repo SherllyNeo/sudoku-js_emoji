@@ -18,7 +18,7 @@ After discovering that they are generated computationally through backtracking, 
 5. If a cell has no candidate value, backtrack and select a new possible value.
 
 #### Difficulty Estimation Algorithm
-While running the solver algorithm, keep track of the branching factor (B<sub>i</sub>) for each i cell. B is the sum of (B<sub>i</sub> - 1)<sup>2<sup>. In addition, keep track of the number of empty cells E.
+While running the solver algorithm, keep track of the branching factor (B<sub>i</sub>) for each i cell. B is the sum of (B<sub>i</sub> - 1)<sup>2</sup>. In addition, keep track of the number of empty cells E.
 
 Difficulty = B * 100 + E.
 
@@ -27,14 +27,23 @@ Difficulty = B * 100 + E.
 ### Generator Algorithm
 1. Observe that all 3x3 subgrids along a diagonal are independent of each other. Randomly generate 1 to 9 and fill in each of those subgrids.
     * Ex:
+    
     4 6 3 _ _ _ _ _ _
+    
     7 8 1 _ _ _ _ _ _
+    
     5 9 2 _ _ _ _ _ _
+    
     _ _ _ 7 4 1 _ _ _
+    
     _ _ _ 9 5 3 _ _ _
+    
     _ _ _ 6 8 2 _ _ _
+    
     _ _ _ _ _ _ 3 8 6 
+    
     _ _ _ _ _ _ 1 5 9 
+    
     _ _ _ _ _ _ 7 2 4 
 2. Fill the grid by running the Solver with a slight modification to randomly shuffle the list of possible values for each cell. I used a flag variable to distinguish when the Solver should shuffle.
 3. Randomly remove a cell.
@@ -46,7 +55,7 @@ Difficulty = B * 100 + E.
     **Note:** Can stop when there is only 16 clues left as it has been proven that there doesn't exists a puzzle with 16 clues or less that is uniquely solvable. 
 ## To-Do
 #### Puzzle Algorithm
-* Right now, the puzzle is taking a while to generate on some iterations. An optimization to make in the Solver is when getting valid candidates, start with the analysis of the previous step and modify it by removing values along the row, column, and box of the last-modified cell. This will bring down the time complexity from O(N<sub>3</sub>) to O(N).
+* Right now, the puzzle is taking a while to generate on some iterations. An optimization to make in the Solver is when getting valid candidates, start with the analysis of the previous step and modify it by removing values along the row, column, and box of the last-modified cell. This will bring down the time complexity from O(N<sup>3</sup>) to O(N).
 * Review my difficulty estimation algorithm. Something is wrong with the code. Difficulty 0 for some generations.
 * Use the better difficulty estimation algorithm in the article I referenced.
 * Use the difficulty score to generate Easy, Medium, Hard puzzles. Currently, I just continue removing clues until there are 16 left or all the list of shuffle cells to go through is exhausted.
