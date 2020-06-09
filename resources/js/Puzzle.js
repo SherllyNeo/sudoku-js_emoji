@@ -1,6 +1,24 @@
 class Puzzle extends Solver{
   constructor() {
-    let board = [['.', '.', '.', '.', '.', '.', '.', '.', '.'],
+    let board = [];
+    super(board);
+    this.initialBoard;  // Keeping track of the initial board for resetting the puzzle.
+    this.solution;
+
+    this.generate();
+  }
+
+  generate() {
+    this._newBoard();
+    this._fillBoard();
+    this.solution = this.board.map(inner => [...inner]);
+
+    this._removeClues();
+    this.initialBoard = this.board.map(inner => [...inner]);
+  }
+
+  _newBoard() {
+    this.board = [['.', '.', '.', '.', '.', '.', '.', '.', '.'],
                   ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
                   ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
                   ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
@@ -9,17 +27,6 @@ class Puzzle extends Solver{
                   ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
                   ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
                   ['.', '.', '.', '.', '.', '.', '.', '.', '.']];
-    super(board);
-    this.solution;
-
-    this.generate();
-  }
-
-  generate() {
-    this._fillBoard();
-    this.solution = this.board.map(inner => [...inner]);
-
-    this._removeClues();
   }
 
   _fillBoard() {
@@ -122,11 +129,9 @@ class Puzzle extends Solver{
         // this.board = stateCopy.map(inner => [...inner])
         this.board = stateCopy;
       }
-      // this.displayBoard(this.board);
+
       ++nextRandomIndex;
     }
-    this.displayBoard(this.board);
-    console.log('\n')
   }
 
   // TODO: Test this function

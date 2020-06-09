@@ -8,24 +8,43 @@
   <link rel="stylesheet" href="resources/css/style.css">
 </head>
 <body>
-  <div class="container-title-bar">
-    <h2>Soduku</h2>
+  <div class="container-page">
+    <div class="container-row container-title-bar">
+      <h2 class="game-title">Sudoku</h2>
+    </div>
 
-    <div class="flex-toolbar">
-      <div id="toolbar-left">
-        <button class="btn btn-primary" id="easy-button">Easy</button>
-        <button class="btn btn-secondary" id="medium-button">Medium</button>
-        <button class="btn btn-secondary" id="hard-button">Hard</button>
-      </div>
+    <div class="container-toolbar">
+      <div class="container-row">
+        <div class="flex-toolbar-content">
+          <div id="toolbar-left">
+            <button class="btn toolbar-button toolbar-button-selected" id="easy-button" onclick="switchtoEasy()">
+              Easy
+            </button>
+            <button class="btn toolbar-button" id="medium-button" onclick="switchtoMedium()">
+              Medium
+            </button>
+            <button class="btn toolbar-button" id="hard-button" onclick="switchtoHard()">
+              Hard
+            </button>
+          </div>
 
-      <div id="toolbar-center">
-        <!-- Timer goes here -->
-      </div>
+          <!-- TODO: Replace with a timer -->
+          <div id="toolbar-center">
+            <p class="difficulty" id="difficulty"></p>
+          </div>
 
-      <div id="toolbar-right">
-        <button class="btn btn-info" id="new-game-button">New Game</button>
-        <button class="btn btn-info" id="reset-button">Reset</button>
-        <button class="btn btn-info"id="help-button">Help</button>
+          <div id="toolbar-right">
+            <button class="btn toolbar-button" id="new-game-button" onclick="createNewGame()">
+              New Game
+            </button>
+            <button class="btn toolbar-button" id="reset-button" onclick="resetPuzzle()">
+              Reset
+            </button>
+            <button class="btn toolbar-button" id="reveal-button" onclick="revealPuzzle()">
+              Reveal
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   
@@ -33,6 +52,9 @@
       <div id="sudoku-board">
         <table id="sudoku-table" class="sudoku-table">
         </table>
+      </div>
+
+      <div class="number-pad" id="number-pad">
       </div>
     </div>
 
