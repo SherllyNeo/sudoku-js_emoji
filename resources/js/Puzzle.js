@@ -93,7 +93,8 @@ class Puzzle extends Solver{
     let nextRandomIndex = 0;
 
     // cluesRemoved < 64 because it has been proven that no 16-clue Sudoku puzzle with a unique solution exists
-    while(cluesRemoved < 64 && nextRandomIndex < 81) {
+    // TODO: this.branch_dificulty_score using to filter out puzzle that is taking too long to generate, but not working.
+    while(cluesRemoved < 64 && nextRandomIndex < 81 && this.branch_dificulty_score < 80 || this.branch_dificulty_score > 100) {
       const row = Math.floor(randomIndices[nextRandomIndex] / 9);
       const col = randomIndices[nextRandomIndex] % 9;
       const cellValue = this.board[row][col];

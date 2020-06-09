@@ -16,8 +16,6 @@ class Solver {
      * E is the number of empty cells. E is used to bias puzzles with less clues with same branch-difficulty.
      */
 
-    console.log(this.branch_dificulty_score)
-    console.log(this.empty_cells_count)
     return this.branch_dificulty_score * 100 + this.empty_cells_count;
   }
 

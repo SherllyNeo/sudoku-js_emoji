@@ -80,7 +80,7 @@ Sudoku Table
   border: 1px solid #959595;
   height: 2em;
   width: 2em;
-  font-size: 35px;
+  font-size: 30px;
   text-align: center;
 }
 
@@ -90,7 +90,7 @@ Sudoku Table
   border-right-width: 5px;
   height: 2em;
   width: 2em;
-  font-size: 35px;
+  font-size: 30px;
   text-align: center;
 }
 
