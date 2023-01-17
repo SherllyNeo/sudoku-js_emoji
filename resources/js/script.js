@@ -67,8 +67,8 @@ function drawNumberPad() {
   for (let i = 0; i < 9; ++i) {
     let numberButton = document.createElement('button');
     numberButton.className = "btn number-pad-button";
-    numberButton.setAttribute('onclick','numberPadSelect(' + number_to_emoji[(i+1).toString()] + ')')
-    numberButton.id = "number-pad-value-" + number_to_emoji[(i+1).toString()];
+    numberButton.setAttribute('onclick','numberPadSelect(' + (i+1).toString() + ')')
+    numberButton.id = "number-pad-value-" + (i+1).toString();
     numberButton.innerHTML = number_to_emoji[(i+1).toString()];
     pad.appendChild(numberButton);
   }
@@ -140,7 +140,7 @@ function numberPadSelect(value) {
     if (value == 0) {
       selectedCell.innerHTML = "";
     } else {
-      selectedCell.innerHTML = value;
+      selectedCell.innerHTML = number_to_emoji[value];
       
     }
   }
