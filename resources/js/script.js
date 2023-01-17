@@ -13,7 +13,18 @@ number_to_emoji = {
   "9":"🖤",
   
 }
-
+// number_to_emoji = {
+//   "1":"1",
+//   "2":"2",
+//   "3":"3",
+//   "4":"4",
+//   "5":"5",
+//   "6":"6",
+//   "7":"7",
+//   "8":"8",
+//   "9":"10",
+  
+// }
 drawBoard();
 drawNumberPad();
 var puzzle = new Puzzle();
@@ -130,6 +141,7 @@ function numberPadSelect(value) {
       selectedCell.innerHTML = "";
     } else {
       selectedCell.innerHTML = value;
+      
     }
   }
 }
