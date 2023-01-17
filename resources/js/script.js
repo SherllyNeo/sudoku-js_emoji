@@ -1,6 +1,19 @@
 // -------------------------------------------------------------------------------------
 // Initialization Section and Global Varaibles
 // -------------------------------------------------------------------------------------
+number_to_emoji = {
+  "1":"🔥",
+  "2":"🌙",
+  "3":"🐀",
+  "4":"🧠",
+  "5":"🤡",
+  "6":"😾",
+  "7":"🥀",
+  "8":"🧅",
+  "9":"🖤",
+  
+}
+
 drawBoard();
 drawNumberPad();
 var puzzle = new Puzzle();
@@ -43,9 +56,9 @@ function drawNumberPad() {
   for (let i = 0; i < 9; ++i) {
     let numberButton = document.createElement('button');
     numberButton.className = "btn number-pad-button";
-    numberButton.setAttribute('onclick','numberPadSelect(' + (i+1).toString() + ')')
-    numberButton.id = "number-pad-value-" + (i+1).toString();
-    numberButton.innerHTML = i + 1;
+    numberButton.setAttribute('onclick','numberPadSelect(' + number_to_emoji[(i+1).toString()] + ')')
+    numberButton.id = "number-pad-value-" + number_to_emoji[(i+1).toString()];
+    numberButton.innerHTML = number_to_emoji[(i+1).toString()];
     pad.appendChild(numberButton);
   }
 
@@ -105,7 +118,7 @@ function revealPuzzle() {
         const id = "table-cell-" + i.toString() + "-" + j.toString();
         let cell = document.getElementById(id);
         cell.style.color = "#3673CD";
-        cell.innerHTML = puzzle.solution[i][j];
+        cell.innerHTML = number_to_emoji[puzzle.solution[i][j]];
       }
     }
   }
@@ -132,7 +145,7 @@ function drawInitialPuzzle() {
       let value = puzzle.initialBoard[i][j];
       cell.style.color = 'black';
       if (value !== '.') {
-        cell.innerHTML = value;
+        cell.innerHTML = number_to_emoji[value];
         cell.style.backgroundColor = "#e6e6e6";
       } else {
         cell.innerHTML = "";
